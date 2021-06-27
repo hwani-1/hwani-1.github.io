@@ -1,0 +1,30 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900");
+@import url("https://fonts.googleapis.com/css?family=Kosugi:400");
+html {
+  display: -ms-grid;
+  display: grid;
+  min-height: 100%;
+}
+
+h1 {
+  font-family: "コスギ", Kosugi, sans-serif;
+  text-align: center;
+  margin-top: 10%;
+  font-size: 2em;
+  letter-spacing: 4px;
+  color: #000000;
+}
+
+a {
+  font-family: "コスギ", Kosugi, sans-serif;
+  text-align: center;
+  margin-top: 10%;
+  font-size: 1em;
+  letter-spacing: 4px;
+  color: #316642;
+  text-decoration: none;
+}
+a:hover {
+  color: #276FBF;
+}
