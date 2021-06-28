@@ -1,17 +1,24 @@
 @charset "UTF-8";
+/*폰트 가져오기*/
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 @import url("https://fonts.googleapis.com/css?family=Kosugi:400");
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:400");
+
 html {
   position: relative;
   min-height: 100%;
+  width: 100%;
+  height: 100%;
+  margin: 0; padding: 0;
 }
 
 body {
   display: -ms-grid;
   display: grid;
   background: #fff;
-  margin-bottom: 70px;
+   width: 100%;
+  height: 100%;
+  margin: 0; padding: 0;
 }
 
 header {
