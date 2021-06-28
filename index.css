@@ -97,7 +97,9 @@ footer .social {
   width: 40%;
   float: right;
 }
-footer .social b {
+footer .social a {
+  font-family: "Lato", Lato, sans-serif;
+  letter-spacing: 2px;
   float: left;
   line-height: 70px;
   text-decoration: none;
@@ -105,7 +107,7 @@ footer .social b {
   text-align: center;
   font-weight: bold;
 }
-footer .social b:hover {
+footer .social a:hover {
   background-color: #222;
 }
 
