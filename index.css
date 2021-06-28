@@ -1,30 +1,94 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900");
 @import url("https://fonts.googleapis.com/css?family=Kosugi:400");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:400");
 html {
   display: -ms-grid;
   display: grid;
   min-height: 100%;
 }
 
+header {
+
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  background: #183059;
+}
+
+header {
+    background: no-repeat left/cover url(/media/photos/keonguk_day.jpg);
+    display: flex;
+    height: 120px;
+    min-width: 120px;
+    align-items: center;
+    color: #fff;
+    text-shadow: #000 0 0 .2em;
+}
+
 h1 {
+  font-family: "Noto Sans KR", sans-serif;
+  text-align: center;
+  margin-top: 10%;
+  font-size: 2em;
+  line-height: 2em;
+  letter-spacing: 1px;
+  color: #F6F4F3;
+}
+
+h2 {
   font-family: "コスギ", Kosugi, sans-serif;
   text-align: center;
   margin-top: 10%;
   font-size: 2em;
-  letter-spacing: 4px;
-  color: #000000;
+  line-height: 2em;
+  letter-spacing: 1px;
+  color: #F6F4F3;
+}
+
+h3 {
+  font-family: "コスギ", Kosugi, sans-serif;
+  text-align: center;
+  margin-top: 0%;
+  font-size: 2em;
+  line-height: 2em;
+  letter-spacing: 1px;
+  color: #F6F4F3;
 }
 
 a {
   font-family: "コスギ", Kosugi, sans-serif;
   text-align: center;
-  margin-top: 10%;
+  margin-top: 0%;
   font-size: 1em;
   letter-spacing: 4px;
-  color: #316642;
+  color: #FF8C00;
   text-decoration: none;
 }
+
 a:hover {
+  color: #276FBF;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  text-transform: uppercase;
+  padding: 10px;
+  font-family: "Lato", sans-serif;
+  font-size: 0.7em;
+}
+footer p {
+  letter-spacing: 3px;
+  color: #F6F4F3;
+}
+footer a {
+  color: #FF8C00;
+  text-decoration: none;
+}
+footer a:hover {
   color: #276FBF;
 }
