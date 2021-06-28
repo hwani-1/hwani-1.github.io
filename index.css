@@ -75,20 +75,49 @@ a:hover {
 footer {
   position: fixed;
   bottom: 0;
-  right: 0;
-  text-transform: uppercase;
-  padding: 10px;
-  font-family: "Lato", sans-serif;
-  font-size: 0.7em;
+  width: 100%;
+  display: inline-block;
+  margin: 2em 0;
+  height: 70px;
+  background-color: #999;
 }
-footer p {
-  letter-spacing: 3px;
-  color: #F6F4F3;
+footer .notcopyright {
+  font-family: Kosugi, sans-serif;
+  width: 60%;
+  float: left;
 }
-footer a {
-  color: #FF8C00;
+footer .notcopyright p {
+  padding-left: 10%;
+  color: white;
+  font-size: 1em;
+  line-height: 40px;
+  letter-spacing: 1px;
+}
+footer .social {
+  width: 40%;
+  float: right;
+}
+footer .social b {
+  float: left;
+  line-height: 70px;
   text-decoration: none;
+  color: white;
+  text-align: center;
+  font-weight: bold;
 }
-footer a:hover {
-  color: #276FBF;
+footer .social b:hover {
+  background-color: #222;
+}
+
+.instagram {
+  background: no-repeat center/cover url(/media/photos/insta_back.jpg);
+  font-size: 1.2em;
+  width: 30%;
+}
+
+.madeby {
+  background-color: #1C2841;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  width: 70%;
 }
