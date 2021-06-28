@@ -41,9 +41,9 @@ h1 {
 /*중간에 대문 글씨.*/
 h2 {
   width: 100%;
-  background-image: url(/media/photos/cloud_day_1.jpg), url(/media/photos/welcome.png);
+  background-image: url(/media/photos/welcome.png), url(/media/photos/cloud_day_1.jpg);
   background-repeat: no-repeat, no-repeat;
-  background-position: center, bottom left;
+  background-position: bottom-left, left;
   display: flex;
   height: 500px;
   align-items: center;
