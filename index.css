@@ -41,12 +41,12 @@ h1 {
 h2 {
   width: 100%;
   background-image: url(/media/photos/welcome.png), url(/media/photos/cloud_day_1.jpg);
+  background-size: cover;
   background-repeat: no-repeat, no-repeat;
   background-position: bottom, left;
   padding-bottom: 30%;
   display: flex;
   height: 500px;
-  object-fit: cover;
   align-items: center;
   margin-top: 0%;
   font-size: 2em;
