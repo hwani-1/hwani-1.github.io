@@ -41,15 +41,11 @@ a:hover {
   margin-bottom: 25%;
 }
 
-.months, .days, .hours, .minutes, .seconds {
+.days, .hours, .minutes, .seconds {
   display: inline-block;
   padding: 20px;
-  width: 100px;
+  width: 140px;
   border-radius: 10px;
-}
-
-.months {
-  background: #FFA900;
 }
 
 .days {
