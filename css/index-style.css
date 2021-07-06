@@ -409,22 +409,6 @@ footer {
   height: 50px;
   background-color: #999;
 }
-footer .notcopyright {
-  font-family: "Kosugi", sans-serif;
-  width: 60%;
-  float: left;
-}
-footer .notcopyright p {
-  padding-left: 10%;
-  color: white;
-  font-size: 1em;
-  line-height: 40px;
-  letter-spacing: 1px;
-}
-footer .social {
-  width: 40%;
-  float: right;
-}
 footer .social a {
   font-family: "Lato", Lato, sans-serif;
   letter-spacing: 2px;
@@ -442,18 +426,12 @@ footer .social a:hover {
 .instagram {
   background:  url(../media/photos/insta_logo_white.png) no-repeat center/40%, url(../media/photos/insta_back.jpg) no-repeat center/cover;
   font-size: 1.2em;
-  width: 30%;
+  width: 10%;
 }
 
 .madeby {
   background-color: #1C2841;
   font-size: 0.8em;
   text-transform: uppercase;
-  width: 70%;
-}
-
-@media only screen and (min-width: 1024px) {
-  .madeby {
-    background-size: ;
-  }
+  width: 90%;
 }
