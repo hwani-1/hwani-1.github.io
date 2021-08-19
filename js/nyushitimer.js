@@ -1,5 +1,5 @@
 const year = new Date().getFullYear();
-const kindaiexam = new Date(2021, 12,20).getTime();
+const kindaiexam = new Date("2021-11-20T00:00:00+0900").getTime();
 const month = new Date().getMonth();
 console.log("test!!!");
 
