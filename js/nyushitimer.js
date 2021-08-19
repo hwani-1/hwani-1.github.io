@@ -1,6 +1,7 @@
 const year = new Date().getFullYear();
 const kindaiexam = new Date(2021, 12,20).getTime();
 const month = new Date().getMonth();
+console.log("test!!!");
 
 // 카운트다운
 let timer = setInterval(function() {
