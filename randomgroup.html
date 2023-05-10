@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>GroupData</title>
-    <script src="GroupData.js"></script>
-  </head>
-  <body>
-   
+<head>
+	<meta charset="UTF-8">
+	<title>GroupData 결과 출력</title>
+</head>
+<body>
+	<h1>GroupData 결과</h1>
+	<div id="result"></div>
+	<script src="groupdata.js"></script>
+	<script>
+		// 결과를 출력할 요소를 변수에 할당합니다.
+		const resultDiv = document.getElementById('result');
+
+		// 결과를 출력하는 함수를 정의합니다.
+		function showResult(result) {
+			resultDiv.innerText = result;
+		}
+
+		// GroupData 객체를 생성하고 결과를 출력합니다.
+		const groupData = new GroupData();
+		const result = groupData.makeGroup();
+		showResult(result);
+	</script>
+</body>
+</html>
