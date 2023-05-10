@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="css/nyushitimer.css" type="text/css">
-<script src="js/GroupData.java"></script>
-<title>ランダムグルーピング</title></div>
+  <title>GroupData.js Example</title>
 </head>
 <body>
-<h1>ランダムグルーピング</h1>
-<div id="timer"></div>
-</div>
-<footer>
-  <p>created by <a href="https://github.com/hwani-1"> hwani</a> ☆
-</footer>
+  <h1>Group Data List</h1>
+  <ul id="group-list"></ul>
+
+  <script src="GroupData.js"></script>
+  <script>
+    // GroupData 객체 생성
+    var groupData = new GroupData();
+
+    // 그룹 리스트 생성
+    var groupList = document.getElementById("group-list");
+    for (var i = 0; i < groupData.groups.length; i++) {
+      var group = groupData.groups[i];
+      var groupItem = document.createElement("li");
+      groupItem.innerHTML = "<h2>" + group.name + "</h2><ul></ul>";
+      var memberList = groupItem.getElementsByTagName("ul")[0];
+      for (var j = 0; j < group.members.length; j++) {
+        var member = group.members[j];
+        var memberItem = document.createElement("li");
+        memberItem.innerHTML = member;
+        memberList.appendChild(memberItem);
+      }
+      groupList.appendChild(groupItem);
+    }
+  </script>
 </body>
 </html>
