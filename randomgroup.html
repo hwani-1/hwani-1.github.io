@@ -1,32 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>GroupData.js Example</title>
-</head>
-<body>
-  <h1>Group Data List</h1>
-  <ul id="group-list"></ul>
-
-  <script src="GroupData.js"></script>
-  <script>
-    // GroupData 객체 생성
-    var groupData = new GroupData();
-
-    // 그룹 리스트 생성
-    var groupList = document.getElementById("group-list");
-    for (var i = 0; i < groupData.groups.length; i++) {
-      var group = groupData.groups[i];
-      var groupItem = document.createElement("li");
-      groupItem.innerHTML = "<h2>" + group.name + "</h2><ul></ul>";
-      var memberList = groupItem.getElementsByTagName("ul")[0];
-      for (var j = 0; j < group.members.length; j++) {
-        var member = group.members[j];
-        var memberItem = document.createElement("li");
-        memberItem.innerHTML = member;
-        memberList.appendChild(memberItem);
-      }
-      groupList.appendChild(groupItem);
-    }
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Random Group Generator</title>
+    <link rel="stylesheet" type="text/css" href="randomgroup.css">
+  </head>
+  <body>
+    <h1>Random Group Generator</h1>
+    <div id="container">
+      <div id="controls">
+        <label for="num-groups">Number of groups:</label>
+        <input type="number" id="num-groups" value="3">
+        <button id="generate-button">Generate groups</button>
+      </div>
+      <div id="groups">
+      </div>
+    </div>
+    <script src="randomgroup.js"></script>
+  </body>
 </html>
