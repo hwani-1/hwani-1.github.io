@@ -51,6 +51,12 @@ class PersonData {
   }
 }
 
+class Random {
+  nextInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+}
+
 function main() {
   const groupData = new GroupData();
   groupData.makeGroup();
