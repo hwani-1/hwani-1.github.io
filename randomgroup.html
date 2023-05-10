@@ -9,23 +9,7 @@
     <div id="group-info"></div>
     <script src="js/GroupData.js"></script>
     <script>
-      const groupData = new GroupData();
-      groupData.makeGroup();
-
-      const groupInfo = document.getElementById("group-info");
-      for (let i = 0; i < 8; i++) {
-        const groupHeader = document.createElement("h2");
-        groupHeader.textContent = `Group ${i+1}`;
-        groupInfo.appendChild(groupHeader);
-
-        const groupList = document.createElement("ul");
-        for (let j = 0; j < 4; j++) {
-          const person = document.createElement("li");
-          person.textContent = groupData.groups[i][j];
-          groupList.appendChild(person);
-        }
-        groupInfo.appendChild(groupList);
-      }
+      main();
     </script>
   </body>
 </html>
