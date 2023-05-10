@@ -1,0 +1,31 @@
+/* table 스타일 */
+table {
+  border-collapse: collapse;
+  margin: 10px;
+  font-size: 1.2em;
+}
+
+/* 테이블 제목 스타일 */
+caption {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+/* 테이블 헤더 스타일 */
+th {
+  border: 1px solid #999;
+  padding: 5px;
+  background-color: #eee;
+}
+
+/* 테이블 내용 스타일 */
+td {
+  border: 1px solid #999;
+  padding: 5px;
+}
+
+/* 짝수 행 배경색 */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
