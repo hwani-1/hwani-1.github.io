@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Group Data Output</title>
-  </head>
-  <body>
-    <h1>Group Data Output</h1>
-    <div id="group-info"></div>
-    <script src="js/GroupData.js"></script>
-    <script>
-      main();
-    </script>
-  </body>
+<head>
+	<title>Group Data</title>
+	<script type="text/javascript" src="js/GroupData.js"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+			var output = document.getElementById("output");
+			output.innerHTML = GroupData.main();
+		}
+	</script>
+</head>
+<body>
+	<div id="output"></div>
+</body>
 </html>
