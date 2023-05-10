@@ -26,7 +26,7 @@ class GroupData {
         this.groups[i][2] = interExcept1st.splice(random.nextInt(interExcept1st.length), 1)[0];
       }
 
-      // 일본인 1학년 / 3학년 1명 추가.
+      // 일본인 1학년 / 3학년 1명 추가
       if (interExcept1st.length === 0 || inter1st.length !== 0) {
         this.groups[i][3] = inter1st.splice(random.nextInt(inter1st.length), 1)[0];
       } else if (inter1st.length === 0 || interExcept1st.length !== 0) {
