@@ -9,6 +9,7 @@
             groupData.makeGroup();
 
             const groupInfoContainer = document.getElementById("group-info");
+            groupInfoContainer.innerHTML = ""; // 기존 결과 초기화
 
             for (let i = 0; i < 8; i++) {
                 const groupInfo = document.createElement("p");
