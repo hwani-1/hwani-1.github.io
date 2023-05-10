@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Group Data</title>
-	<script type="text/javascript" src="js/GroupData.js"></script>
-	<script type="text/javascript">
-		window.onload = function() {
-			var output = document.getElementById("output");
-			output.innerHTML = GroupData.main();
-		}
-	</script>
+	<title>Random Group Generator</title>
 </head>
 <body>
-	<div id="output"></div>
+	<h1>Random Group Generator</h1>
+	<div id="result"></div>
+	<script src="js/GroupData.js"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			document.getElementById("result").innerHTML = main();
+		});
+	</script>
 </body>
 </html>
