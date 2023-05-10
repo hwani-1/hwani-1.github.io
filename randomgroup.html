@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Random Group Generator</title>
+    <title>Random Group Generator</title>
+    <script src="js/GroupData.js"></script>
+    <script>
+        function generateGroups() {
+            const groupData = new GroupData();
+            groupData.makeGroup();
+
+            const groupInfoContainer = document.getElementById("group-info");
+
+            for (let i = 0; i < 8; i++) {
+                const groupInfo = document.createElement("p");
+                groupInfo.textContent = `그룹 ${i + 1}의 정보입니다: ${groupData.groups[i].join(", ")}`;
+                groupInfoContainer.appendChild(groupInfo);
+            }
+        }
+    </script>
 </head>
 <body>
-	<h1>Random Group Generator</h1>
-	<div id="result"></div>
-	<script src="js/GroupData.js"></script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			document.getElementById("result").innerHTML = main();
-		});
-	</script>
+    <h1>Random Group Generator</h1>
+    <button onclick="generateGroups()">Generate Groups</button>
+    <div id="group-info"></div>
 </body>
 </html>
