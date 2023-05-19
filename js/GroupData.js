@@ -71,7 +71,7 @@ class GroupData {
   }
 
   makeGroup() {
-    const random = Math.Random;
+    const random = Math.random;
 
     for (let i = 0; i < 8; i++) {
       // 한국인 1명을 추가
