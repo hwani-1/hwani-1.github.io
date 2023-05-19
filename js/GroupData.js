@@ -1,71 +1,124 @@
 class GroupData {
-  constructor() {
-    this.personData = new PersonData();
-    this.groups = new Array(8).fill(null).map(() => new Array(4).fill(null));
-  }
-
-  makeGroup() {
-    const korean = this.personData.korean.slice();
-    const inter1st = this.personData.inter1st.slice();
-    const interExcept1st = this.personData.interExcept1st.slice();
-    const random = new Random();
-
-    for (let i = 0; i < 8; i++) {
-      // 한국인 1명을 추가
-      this.groups[i][0] = korean.splice(random.nextInt(korean.length), 1)[0];
-
-      // 일본인 1학년 1명을 추가
-      if (inter1st.length !== 0) {
-        this.groups[i][1] = inter1st.splice(random.nextInt(inter1st.length), 1)[0];
-      } else {
-        this.groups[i][1] = interExcept1st.splice(random.nextInt(interExcept1st.length), 1)[0];
-      }
-
-      // 일본인 3학년 1명을 추가
-      if (interExcept1st.length !== 0) {
-        this.groups[i][2] = interExcept1st.splice(random.nextInt(interExcept1st.length), 1)[0];
-      }
-
-      // 일본인 1학년 / 3학년 1명 추가
-      if (interExcept1st.length === 0 || inter1st.length !== 0) {
-        this.groups[i][3] = inter1st.splice(random.nextInt(inter1st.length), 1)[0];
-      } else if (inter1st.length === 0 || interExcept1st.length !== 0) {
-        this.groups[i][3] = interExcept1st.splice(random.nextInt(interExcept1st.length), 1)[0];
-      }
+    constructor() {
+        this.personData = new PersonData();
+        this.groups = new Array(8);
+        this.leftPeople = [];
     }
-  }
 
-  showGroupInfo() {
-    const korean = this.personData.korean.slice();
-    for (let i = 0; i < 8; i++) {
-      console.log(`그룹 ${i+1}의 정보입니다`);
-      console.log(`${this.groups[i][0]}, ${this.groups[i][1]}, ${this.groups[i][2]}, ${this.groups[i][3]}\n`);
+    makeGroup() {
+        const random = new Random();
+
+        for (let i = 0; i < 8; i++) {
+            // 한국인 1명을 추가
+            this.groups[i][0] = this.personData.korean.splice(random.nextInt(this.personData.korean.length), 1)[0];
+
+            // 일본인 1학년 1명을 추가
+            this.groups[i][1] = this.personData.inter1st.splice(random.nextInt(this.personData.inter1st.length), 1)[0];
+
+            // 일본인 3학년 1명을 추가
+            this.groups[i][2] = this.personData.interExcept1st.splice(random.nextInt(this.personData.interExcept1st.length), 1)[0];
+        }
+
+        this.leftPeople = this.leftPeople.concat(this.personData.inter1st, this.personData.interExcept1st);
+
+        // 추가된 한국인을 추가
+        while (this.personData.korean.length !== 0) {
+            this.groups[ohhh][4] = this.personData.korean.splice(random.nextInt(this.personData.korean.length), 1)[0];
+            ohhh++;
+        }
+
+        ohhh = 0;
+
+        while (this.leftPeople.length !== 0) {
+            this.groups[ohhh][3] = this.leftPeople.splice(random.nextInt(this.leftPeople.length), 1)[0];
+            ohhh++;
+        }
     }
-    console.log(`추가로 분배해야 할 인원의 정보입니다`);
-    for (let i = 0; i < korean.length; i++) {
-      console.log(`${korean.[i]}\n`);
+
+    showGroupInfo() {
+        for (let i = 0; i < 8; i++) {
+            console.log(`그룹${i + 1}의 정보입니다`);
+            if (this.groups[i][4] === null)
+                console.log(`${this.groups[i][0]}, ${this.groups[i][1]}, ${this.groups[i][2]}, ${this.groups[i][3]}`);
+            else
+                console.log(`${this.groups[i][0]}, ${this.groups[i][4]}, ${this.groups[i][1]}, ${this.groups[i][2]}, ${this.groups[i][3]}`);
+            console.log("");
+        }
     }
-  }
 }
 
 class PersonData {
-  constructor() {
-    this.korean = ["김원서", "김가윤", "이동혁", "허레미", "배예람", "임재현", "유정빈", "지원", "조수빈", "김윤수", "박예신"];
-    this.inter1st = ["あだち ゆずき", "いけだ ゆづき", "いしづか りえ", "おかもと みおう", "おはら ゆき", "かみもと ゆう", "かわばた てるみ", "くりた かおり","こばやし ゆうき","なかじま ゆうや","はじ こより","やまだ ひな","やまの なな"];
-    this.interExcept1st = ["おばた ひろこ", "きっかわ みどり", "さいごう めぐみ", "すえつぐ まこ", "たにぐち ひろか", "つむら ゆき", "はんのうら せりな", "ふくしま とうこ","まつだ かんな","みやた ひびき","ので なつき"];
-  }
+    constructor() {
+        this.inter1st = [];
+        this.interExcept1st = [];
+        this.korean = [];
+
+        this.addPerson(1, "あだち ゆずき");
+        this.addPerson(1, "いけだ ゆづき");
+        this.addPerson(1, "いしづか りえ");
+        this.addPerson(1, "おかもと みおう");
+        this.addPerson(1, "おはら ゆき");
+        this.addPerson(1, "かみもと ゆう");
+        this.addPerson(1, "かわばた てるみ");
+        this.addPerson(1, "くりた かおり");
+        this.addPerson(1, "こばやし ゆうき");
+        this.addPerson(1, "なかじま ゆうや");
+        this.addPerson(1, "はじ こより");
+        this.addPerson(1, "やまだ ひな");
+        this.addPerson(1, "やまの なな");
+        
+        this.addPerson('x', "おばた ひろこ");
+        this.addPerson('x', "きっかわ みどり");
+        this.addPerson('x', "さいごう めぐみ");
+        this.addPerson('x', "すえつぐ まこ");
+        this.addPerson('x', "たにぐち ひろか");
+        this.addPerson('x', "つむら ゆき");
+        this.addPerson('x', "はんのうら せりな");
+        this.addPerson('x', "ふくしま とうこ");
+        this.addPerson('x', "まつだ かんな");
+        this.addPerson('x', "みやた ひびき");
+        this.addPerson('x', "ので なつき");
+
+        this.addPerson('k', "김원서");
+        this.addPerson('k', "배예람");
+        this.addPerson('k', "임재현");
+        this.addPerson('k', "유정빈");
+        this.addPerson('k', "지원");
+        this.addPerson('k', "조수빈");
+        this.addPerson('k', "허레미");
+        this.addPerson('k', "이동혁");
+        this.addPerson('k', "김가윤");
+        this.addPerson('k', "이찬호");
+        this.addPerson('k', "김윤수");
+        this.addPerson('k', "박예신");
+    }
+
+    addPerson(x, name) {
+        switch (x) {
+            case 1:
+                this.inter1st.push(name);
+                break;
+            case 'x':
+                this.interExcept1st.push(name);
+                break;
+            case 'k':
+                this.korean.push(name);
+                break;
+            default:
+                break;
+        }
+    }
+
+    getInter1st() {
+        return this.inter1st;
+    }
+
+    getInterExcept1st() {
+        return this.interExcept1st;
+    }
+
+    getKorean() {
+        return this.korean;
+    }
 }
 
-class Random {
-  nextInt(max) {
-    return Math.floor(Math.random() * max);
-  }
-}
-
-function main() {
-  const groupData = new GroupData();
-  groupData.makeGroup();
-  groupData.showGroupInfo();
-}
-
-main();
