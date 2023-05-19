@@ -4,7 +4,7 @@ class PersonData {
     this.interExcept1st = [];
     this.korean = [];
 
-    // 국제학부 1학년
+    // 국제학부 1학년.
     this.addPerson(1, "あだち ゆずき");
     this.addPerson(1, "いけだ ゆづき");
     this.addPerson(1, "いしづか りえ");
