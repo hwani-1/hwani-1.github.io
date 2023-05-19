@@ -35,6 +35,7 @@ class GroupData {
       groups[i][4] = this.personData.korean.splice(random(0, this.personData.korean.length - 1), 1)[0];
     }
 
+    // 카운터 초기화
     let i = 0;
 
     while (leftPeople.length !== 0) {
