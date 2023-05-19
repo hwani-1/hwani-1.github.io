@@ -4,6 +4,14 @@ class GroupData {
         this.groups = new Array(8);
         this.leftPeople = [];
     }
+    
+    function Random() {
+        return {
+            nextInt: function(max) {
+                return Math.floor(Math.random() * max);
+            }
+        };
+    }
 
     makeGroup() {
         const random = new Random();
