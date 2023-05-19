@@ -10,41 +10,42 @@ class GroupData {
   }
 
   generateGroups() {
-    const random = this.getRandomInt;
+  const random = this.getRandomInt;
 
-    const groups = new Array(8).fill().map(() => new Array(5));
+  const groups = new Array(8).fill().map(() => new Array(5));
 
-    for (let i = 0; i < 8; i++) {
-      // 한국인 1명을 추가
-      groups[i][0] = this.personData.korean.splice(random(0, this.personData.korean.length - 1), 1)[0];
+  for (let i = 0; i < 8; i++) {
+    // 한국인 1명을 추가
+    groups[i][0] = this.personData.korean.splice(random(0, this.personData.korean.length - 1), 1)[0];
 
-      // 일본인 1학년 1명을 추가
-      groups[i][1] = this.personData.inter1st.splice(random(0, this.personData.inter1st.length - 1), 1)[0];
+    // 일본인 1학년 1명을 추가
+    groups[i][1] = this.personData.inter1st.splice(random(0, this.personData.inter1st.length - 1), 1)[0];
 
-      // 일본인 3학년 1명을 추가
-      groups[i][2] = this.personData.interExcept1st.splice(
-        random(0, this.personData.interExcept1st.length - 1),
-        1
-      )[0];
-    }
-
-    const leftPeople = [...this.personData.inter1st, ...this.personData.interExcept1st];
-
-    // 추가된 한국인을 추가
-    while (this.personData.korean.length !== 0) {
-      groups[i][4] = this.personData.korean.splice(random(0, this.personData.korean.length - 1), 1)[0];
-    }
-
-    // 카운터 초기화
-    let i = 0;
-
-    while (leftPeople.length !== 0) {
-      groups[i][3] = leftPeople.splice(random(0, leftPeople.length - 1), 1)[0];
-      i++;
-    }
-
-    this.showGroupInfo(groups);
+    // 일본인 3학년 1명을 추가
+    groups[i][2] = this.personData.interExcept1st.splice(
+      random(0, this.personData.interExcept1st.length - 1),
+      1
+    )[0];
   }
+
+  const leftPeople = [...this.personData.inter1st, ...this.personData.interExcept1st];
+
+  // 추가된 한국인을 추가
+  let ohhh = 0;
+  while (this.personData.korean.length !== 0) {
+    groups[ohhh][4] = this.personData.korean.splice(random(0, this.personData.korean.length - 1), 1)[0];
+    ohhh++;
+  }
+
+  ohhh = 0;
+
+  while (leftPeople.length !== 0) {
+    groups[ohhh][3] = leftPeople.splice(random(0, leftPeople.length - 1), 1)[0];
+    ohhh++;
+  }
+
+  this.showGroupInfo(groups);
+}
 
   showGroupInfo(groups) {
     const groupInfoElement = document.getElementById('group-info');
