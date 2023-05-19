@@ -36,16 +36,21 @@ class GroupData {
   }
 
   showGroupInfo() {
+    const korean = this.personData.korean.slice();
     for (let i = 0; i < 8; i++) {
       console.log(`그룹 ${i+1}의 정보입니다`);
       console.log(`${this.groups[i][0]}, ${this.groups[i][1]}, ${this.groups[i][2]}, ${this.groups[i][3]}\n`);
+    }
+    console.log(`추가로 분배해야 할 인원의 정보입니다`);
+    for (let i = 0; i < korean.length; i++) {
+      console.log(`${korean.[i]}\n`);
     }
   }
 }
 
 class PersonData {
   constructor() {
-    this.korean = ["김원서", "배예람", "임재현", "유정빈", "지원", "김나혜", "김윤수", "박예신"];
+    this.korean = ["김원서", "김가윤", "이동혁", "허레미", "배예람", "임재현", "유정빈", "지원", "조수빈", "김윤수", "박예신"];
     this.inter1st = ["あだち ゆずき", "いけだ ゆづき", "いしづか りえ", "おかもと みおう", "おはら ゆき", "かみもと ゆう", "かわばた てるみ", "くりた かおり","こばやし ゆうき","なかじま ゆうや","はじ こより","やまだ ひな","やまの なな"];
     this.interExcept1st = ["おばた ひろこ", "きっかわ みどり", "さいごう めぐみ", "すえつぐ まこ", "たにぐち ひろか", "つむら ゆき", "はんのうら せりな", "ふくしま とうこ","まつだ かんな","みやた ひびき","ので なつき"];
   }
