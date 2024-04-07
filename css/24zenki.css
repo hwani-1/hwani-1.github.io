@@ -37,9 +37,10 @@ a:hover {
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
-  display: flex; /* 수업들을 가로로 나란히 표시하기 위해 flexbox를 사용합니다 */
-  flex-wrap: wrap; /* 너비가 부족할 때 수업들이 줄 바꿈되도록 합니다 */
-  justify-content: space-between; /* 수업들을 가능한 넓게 펼쳐서 표시합니다 */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row; /* 가로 방향으로 요소들을 배치합니다 */
 }
 
 .day-section h2 {
