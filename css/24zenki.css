@@ -3,6 +3,11 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 h1 {
@@ -25,6 +30,7 @@ a:hover {
 
 .day-section {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .day-section h2 {
@@ -36,11 +42,11 @@ a:hover {
 .class-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .class {
-  width: calc(50% - 5px);
+  width: calc(50% - 10px);
   margin-bottom: 10px;
 }
 
