@@ -3,11 +3,6 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f2f2f2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  flex-direction: column;
 }
 
 h1 {
@@ -30,30 +25,28 @@ a:hover {
 
 .day-section {
   margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  text-align: center;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  flex-direction: row; /* 가로 방향으로 요소들을 배치합니다 */
 }
 
 .day-section h2 {
-  color: #4CAF50; /* 다른 색상으로 변경합니다 */
+  color: #007bff;
   margin-top: 10px;
   margin-bottom: 5px;
-  font-weight: bold;
-  flex-basis: 100%; /* h2 요소가 수업 박스의 전체 너비를 차지하지 않도록 합니다 */
 }
 
-.day-section > a {
-  flex-basis: calc(50% - 5px); /* 수업 링크가 수업 박스의 절반 너비를 차지하도록 설정합니다 */
-  margin: 5px; /* 링크 간의 간격을 조정합니다 */
+.class-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.class {
+  width: calc(50% - 5px);
+  margin-bottom: 10px;
+}
+
+.class span {
+  display: block;
+  margin-top: 5px;
 }
 
 /* 모바일 환경에서 요소들을 더 좁게 배치 */
@@ -69,5 +62,9 @@ a:hover {
   
   .day-section h2 {
     font-size: 1.2rem;
+  }
+
+  .class {
+    width: 100%;
   }
 }
