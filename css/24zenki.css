@@ -3,6 +3,11 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 h1 {
@@ -10,16 +15,43 @@ h1 {
 }
 
 a {
-  display: block;
-  margin: 10px 0;
+  display: inline-block;
+  margin: 5px 0;
   padding: 10px;
   background-color: #007bff;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
-  width: fit-content;
 }
 
 a:hover {
   background-color: #0056b3;
+}
+
+.day-section {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.day-section h2 {
+  color: #007bff;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* 모바일 환경에서 요소들을 더 좁게 배치 */
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  a {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+  
+  .day-section h2 {
+    font-size: 1.2rem;
+  }
 }
