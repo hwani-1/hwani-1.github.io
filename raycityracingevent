@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RP 보상 계산기</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>RP 보상 계산기</h1>
+        <label for="startPoints">시작시 포인트:</label>
+        <input type="number" id="startPoints" placeholder="시작시 포인트를 입력하세요">
+
+        <label for="currentPoints">현재 보유 포인트:</label>
+        <input type="number" id="currentPoints" placeholder="현재 보유 포인트를 입력하세요">
+
+        <button onclick="calculateReward()">보상 계산하기</button>
+
+        <div class="result" id="result"></div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>필요 RP</th>
+                    <th>보상</th>
+                    <th>필요 포인트</th>
+                    <th>매일 평균 수급 RP</th>
+                </tr>
+            </thead>
+            <tbody id="rewardTable">
+                <tr>
+                    <td>150,000</td>
+                    <td>5천만 레인 + 이리 12강 셋</td>
+                    <td id="needRP150000"></td>
+                    <td id="avgRP150000"></td>
+                </tr>
+                <tr>
+                    <td>300,000</td>
+                    <td>원하는 차량 외장셋 (슈퍼외장 제외)</td>
+                    <td id="needRP300000"></td>
+                    <td id="avgRP300000"></td>
+                </tr>
+                <tr>
+                    <td>500,000</td>
+                    <td>2억 레인 + 3만 캐쉬</td>
+                    <td id="needRP500000"></td>
+                    <td id="avgRP500000"></td>
+                </tr>
+                <tr>
+                    <td>750,000</td>
+                    <td>2.9 잡옵 or 탑스피드 부스터 잡옵</td>
+                    <td id="needRP750000"></td>
+                    <td id="avgRP750000"></td>
+                </tr>
+                <tr>
+                    <td>1,000,000</td>
+                    <td>원하는 차량 키 (부가티, 엔초 포함)</td>
+                    <td id="needRP1000000"></td>
+                    <td id="avgRP1000000"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function calculateReward() {
+            const startPoints = parseInt(document.getElementById('startPoints').value);
+            const currentPoints = parseInt(document.getElementById('currentPoints').value);
+
+            if (isNaN(startPoints) || isNaN(currentPoints)) {
+                alert('올바른 숫자를 입력하세요.');
+                return;
+            }
+
+            const validPoints = currentPoints - startPoints;
+            const today = new Date();
+            const targetDate = new Date(today.getFullYear(), 7, 1); // 8월 1일
+            const daysRemaining = Math.ceil((targetDate - today) / (1000 * 60 * 60 * 24));
+
+            const rewards = [
+                { rp: 150000, reward: '5천만 레인 + 이리 12강 셋' },
+                { rp: 300000, reward: '원하는 차량 외장셋 (슈퍼외장 제외)' },
+                { rp: 500000, reward: '2억 레인 + 3만 캐쉬' },
+                { rp: 750000, reward: '2.9 잡옵 or 탑스피드 부스터 잡옵' },
+                { rp: 1000000, reward: '원하는 차량 키 (부가티, 엔초 포함)' }
+            ];
+
+            rewards.forEach(reward => {
+                const needRP = reward.rp - validPoints;
+                const avgRP = (needRP > 0) ? Math.ceil(needRP / daysRemaining) : 0;
+
+                document.getElementById(`needRP${reward.rp}`).innerText = needRP > 0 ? needRP : '달성';
+                document.getElementById(`avgRP${reward.rp}`).innerText = avgRP > 0 ? avgRP : '완료';
+            });
+
+            document.getElementById('result').innerText = `유효 포인트: ${validPoints}`;
+        }
+    </script>
+</body>
+</html>
