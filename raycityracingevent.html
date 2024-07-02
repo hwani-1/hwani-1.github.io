@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RP 보상 계산기</title>
-    <link rel="stylesheet" href="css/raycityracingevent.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>RP 보상 계산기</h1>
         <label for="startPoints">시작시 포인트:</label>
-        <input type="number" id="startPoints" placeholder="시작시 포인트를 입력하세요">
+        <input type="number" id="startPoints" placeholder="시작시 포인트를 입력하세요" oninput="saveStartPoints()">
 
         <label for="currentPoints">현재 보유 포인트:</label>
         <input type="number" id="currentPoints" placeholder="현재 보유 포인트를 입력하세요">
@@ -64,6 +64,20 @@
     </div>
 
     <script>
+        // 시작시 포인트를 로컬 스토리지에 저장
+        function saveStartPoints() {
+            const startPoints = document.getElementById('startPoints').value;
+            localStorage.setItem('startPoints', startPoints);
+        }
+
+        // 페이지 로드 시 로컬 스토리지에서 시작시 포인트 불러오기
+        window.onload = function() {
+            const savedStartPoints = localStorage.getItem('startPoints');
+            if (savedStartPoints !== null) {
+                document.getElementById('startPoints').value = savedStartPoints;
+            }
+        }
+
         function calculateReward() {
             const startPoints = parseInt(document.getElementById('startPoints').value);
             const currentPoints = parseInt(document.getElementById('currentPoints').value);
